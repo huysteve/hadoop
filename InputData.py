@@ -6,19 +6,19 @@ from pyspark.sql import functions
 
 # movies (movie_id int, title text, genres text);
 def parseInputMovies(line):
-    fields = line.split('::')
+    fields = line.split(':')
     return Row(movie_id=int(fields[0]), title=fields[1], genres=fields[2])
 
 
 # ratings (user_id int, movie_id int, rating int, times_tamp int);
 def parseInputRatings(line):
-    fields = line.split('::')
-    return Row(user_id=int(fields[0]), movie_id=int(fields[1]), rating=int(fields[2]), times_tamp=int(fields[3]))
+    fields = line.split(':')
+    return Row(user_id=int(fields[0]), movie_id=int(fields[1]), rating=float(fields[2]), times_tamp=int(fields[3]))
 
 
 # tags user_id int, movie_id int, tag text, times_tamp int);
 def parseInputTags(line):
-    fields = line.split('::')
+    fields = line.split(':')
     return Row(user_id=int(fields[0]), movie_id=int(fields[1]), tag=fields[2], times_tamp=int(fields[3]))
 
 
