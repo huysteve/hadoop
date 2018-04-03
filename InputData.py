@@ -13,7 +13,7 @@ def parseInputMovies(line):
 # ratings (user_id int, movie_id int, rating int, times_tamp int);
 def parseInputRatings(line):
     fields = line.split('::')
-    return Row(user_id=int(fields[0]), movie_id=int(fields[1]), rating=int(fields[2]), times_tamp=int(fields[3]))
+    return Row(user_id=int(fields[0]), movie_id=int(fields[1]), rating=float(fields[2]), times_tamp=int(fields[3]))
 
 
 # tags user_id int, movie_id int, tag text, times_tamp int);
